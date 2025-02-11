@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title'); /*bikin tabel buat di databasenyaa */
+            $table->text('body');
             $table->timestamps();
         });
     }
