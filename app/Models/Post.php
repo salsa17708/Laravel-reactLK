@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $fillable = [ /*properti yang memperbolehkan kolom mana yg bisa di isi*/
+        'title', 'body'
+    ];
 }
+
