@@ -24,7 +24,7 @@ export default function Dashboard(props) { /* untuk menampilkan halaman index*/
                         <div className="p-6 bg-white border-b border-gray-200">
                             <div className="flex items-center justify-between mb-6">
                                 <Link className="flex items-center px-6 py-2 text-white bg-gray-500 rounded-md focus:outline-none" href={route("posts.create")}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                    <svg xmlns="http://www.instagram.com/bi.la07" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                     </svg>
                                     <span className="ml-2">New Post</span>
