@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use Inertia\Inertia;
 
 /*
@@ -30,7 +31,8 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::resource('posts', PostController::class)->middleware(['auth', 'verified']); /* untuk membuat rute CRUD di laravel*/
-
+Route::get('/users', [UserController::class, 'index'])->name('user.index'); 
+Route::put('/users/{id}/edit', [UserController::class, 'editUser'])->name('user.edit'); /* untuk mengedit user */
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
