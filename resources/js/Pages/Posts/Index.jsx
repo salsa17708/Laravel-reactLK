@@ -31,34 +31,34 @@ export default function Dashboard(props) { /* untuk menampilkan halaman index*/
                                 </Link>
                             </div>
 
-                            <table className="table-fixed w-full">
-                                <thead>
-                                    <tr className="text-white bg-gray-500">
-                                        <th className="px-4 py-2 w-20">No.</th>
-                                        <th className="px-4 py-2">Title</th>
-                                        <th className="px-4 py-2">Body</th>
-                                        <th className="px-4 py-2">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {posts && posts.map((item) => (
-                                        <tr key={item.id}>
-                                            <td className="border px-4 text-center py-2">{item.id}</td>
-                                            <td className="border px-4 text-center py-2">{item.title}</td>
-                                            <td className="border px-4 text-center py-2">{item.body}</td>
-                                            <td className="border px-4 text-center py-2">
-                                                <Link tabIndex="1" className="px-4 py-2 text-sm text-white bg-gray-500 rounded" href={route("posts.edit", item.id)} >Edit</Link>
-                                                <button onClick={destroy} id={item.id} tabIndex="-1" type="button" className="mx-1 px-4 py-2 text-sm text-white bg-pink-500 rounded" >Delete</button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                    {posts.length === 0 && (
-                                        <tr>
-                                            <td className="px-6 py-4 border-t" colSpan="4">Kaga ada ape ape.</td>
-                                        </tr>
-                                    )}
-                                </tbody>
-                            </table>
+                            <table className="min-w-full bg-white border border-gray-200">
+    <thead>
+        <tr className="bg-red-800 text-white">
+            <th className="px-4 py-2 w-20">No.</th>
+            <th className="px-4 py-2">Title</th>
+            <th className="px-4 py-2">Body</th>
+            <th className="px-4 py-2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {posts && posts.map((item) => (
+            <tr key={item.id} className="hover:bg-gray-100">
+                <td className="border px-4 text-center py-2">{item.id}</td>
+                <td className="border px-4 text-center py-2">{item.title}</td>
+                <td className="border px-4 text-center py-2">{item.body}</td>
+                <td className="border px-4 text-center py-2">
+                    <Link tabIndex="1" className="px-4 py-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600" href={route("posts.edit", item.id)}>Edit</Link>
+                    <button onClick={destroy} id={item.id} tabIndex="-1" type="button" className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded hover:bg-red-600">Delete</button>
+                </td>
+            </tr>
+        ))}
+        {posts.length === 0 && (
+            <tr>
+                <td className="px-6 py-4 border-t" colSpan="4">Kaga ada ape ape.</td>
+            </tr>
+        )}
+    </tbody>
+</table>
                         </div>
                     </div>
                 </div>

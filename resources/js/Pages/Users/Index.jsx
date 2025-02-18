@@ -11,7 +11,7 @@ export default function Dashboard(props) {
         }
     }
     return (
-        <AuthenticatedLayout auth={props.auth} user={props.auth.user} errors={props.errors} header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">All Posts</h2>}>
+        <AuthenticatedLayout auth={props.auth} user={props.auth.user} errors={props.errors} header={<h2 className="font-semibold text-xl text-red-800 leading-tight">All Posts</h2>}>
             <Head title="Posts" />
             <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 {props.flash.success && (
@@ -27,7 +27,7 @@ export default function Dashboard(props) {
 
                             <table className="table-fixed w-full">
                                 <thead>
-                                    <tr className="text-white bg-gray-500">
+                                    <tr className="text-white bg-red-800">
                                         <th className="px-4 py-2 w-20">No.</th>
                                         <th className="px-4 py-2">Name</th>
                                         <th className="px-4 py-2">Email</th>
@@ -49,8 +49,8 @@ export default function Dashboard(props) {
                                                         onChange={() => handleToggleEditor(item.id)}
                                                         checked={item.roles.some(role => role.name === 'editor')}
                                                     />
-                                                    <div className={`w-11 h-6 ${item.roles.some(role => role.name === 'editor') ? 'bg-blue-600' : 'bg-gray-200'} peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600`}></div>
-                                                    <span className={`ms-3 text-sm font-medium ${item.roles.some(role => role.name === 'editor') ? 'text-blue-600' : 'text-gray-900 dark:text-gray-300'}`}>Editor</span>
+                                                    <div className={`w-11 h-6 ${item.roles.some(role => role.name === 'editor') ? 'bg-blue-600' : 'bg-gray-200'} peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600`}></div>
+                                                    <span className={`ms-3 text-sm font-medium ${item.roles.some(role => role.name === 'editor') ? 'text-red-800' : 'text-gray-900 dark:text-gray-300'}`}>Editor</span>
                                                 </label>
                                             </td>
                                         </tr>
