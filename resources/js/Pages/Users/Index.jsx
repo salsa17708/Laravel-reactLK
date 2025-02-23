@@ -11,7 +11,7 @@ export default function Dashboard(props) {
         }
     }
     return (
-        <AuthenticatedLayout auth={props.auth} user={props.auth.user} errors={props.errors} header={<h2 className="font-semibold text-xl text-red-800 leading-tight">All Posts</h2>}>
+        <AuthenticatedLayout auth={props.auth} user={props.auth.user} errors={props.errors} header={<h2 className="font-semibold text-xl text-red-800 leading-tight">All users</h2>}>
             <Head title="Posts" />
             <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 {props.flash.success && (
